@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "renderingMode": "procedural_phaser_graphics",
+  "description": "本專案採用極簡現代幾何視覺規範，所有防禦塔、敵人、粒子貼圖均透過 Phaser Graphics API 於 BootScene 動態生成高解析向量貼圖。",
+  "textures": [
+    {
+      "id": "particle_dot",
+      "category": "vfx",
+      "size": "16x16",
+      "generator": "BootScene.createProceduralTextures",
+      "status": "generated"
+    },
+    {
+      "id": "particle_ring",
+      "category": "vfx",
+      "size": "64x64",
+      "generator": "BootScene.createProceduralTextures",
+      "status": "generated"
+    },
+    {
+      "id": "tower_pulse",
+      "category": "tower",
+      "size": "64x64",
+      "generator": "ProceduralVector",
+      "status": "generated"
+    },
+    {
+      "id": "tower_frost",
+      "category": "tower",
+      "size": "64x64",
+      "generator": "ProceduralVector",
+      "status": "generated"
+    },
+    {
+      "id": "tower_rail",
+      "category": "tower",
+      "size": "64x64",
+      "generator": "ProceduralVector",
+      "status": "generated"
+    },
+    {
+      "id": "tower_arc",
+      "category": "tower",
+      "size": "64x64",
+      "generator": "ProceduralVector",
+      "status": "generated"
+    }
+  ]
+}

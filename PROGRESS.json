@@ -1,0 +1,54 @@
+{
+  "gameType": "策略塔防 (Tower Defense)",
+  "initialScope": "單張固定路線地圖、10波漸進敵人與Boss防禦、能量資源管理、四種幾何防禦塔與升級系統、每波結束三選一強化卡牌、核心生命歸零失敗／完成10波勝利",
+  "currentStep": "STEP_13_DELIVERY",
+  "currentQuestion": "已完成最終交付與文件同步",
+  "completedSteps": [
+    "STEP_00_GAME_TYPE",
+    "STEP_01_SKILLS_REGISTRY",
+    "STEP_02_DEV_RULES",
+    "STEP_03_WORKFLOW",
+    "STEP_04_GDD",
+    "STEP_05_PROTOTYPE",
+    "STEP_06_ART_BIBLE",
+    "STEP_07_CONCEPT_PROMPT",
+    "STEP_08_IMAGE_GENERATION",
+    "STEP_09_VFX_DESIGN",
+    "STEP_10_ASSET_INTEGRATION",
+    "STEP_11_GAME_BALANCE",
+    "STEP_12_FINAL_INTEGRATION",
+    "STEP_13_DELIVERY"
+  ],
+  "answers": {
+    "gameType": "策略塔防 / 基地守護",
+    "artStyle": "極簡現代幾何（流暢動態粒子＋高質感配色）",
+    "bonusMechanics": [
+      "三選一強化卡牌 / 技能樹"
+    ],
+    "theme": "極簡幾何能量矩陣（守護中央核心棱鏡，抵禦幾何病毒入侵）",
+    "towerAndCardSystem": "四種特色幾何塔（脈衝三角、冰霜六邊、軌道菱形、磁暴星形）＋ 每波結束三選一強化卡牌",
+    "wavesAndTitle": "10 波標準節奏 ＋ 4 種幾何病毒 ＋ 第 10 波首領戰，正式命名《棱鏡矩陣》(PRISM MATRIX)"
+  },
+  "pendingApprovals": [],
+  "approvedDocuments": [
+    "GDD.md",
+    "ART_BIBLE.md",
+    "VFX_DESIGN.md",
+    "GAME_BALANCE.md",
+    "WORKFLOW.md"
+  ],
+  "generatedAssets": [
+    "procedural:particle_dot",
+    "procedural:particle_ring",
+    "procedural:tower_pulse",
+    "procedural:tower_frost",
+    "procedural:tower_rail",
+    "procedural:tower_arc"
+  ],
+  "blockers": [],
+  "deferredTasks": [
+    "多關卡地圖切換",
+    "無盡挑戰模式"
+  ],
+  "status": "completed_with_limitations"
+}

@@ -1,0 +1,392 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "units": {
+      "speed": "pixels/second",
+      "range": "pixels",
+      "cooldown": "milliseconds",
+      "duration": "milliseconds",
+      "damage": "hit_points",
+      "cost": "energy_units"
+    }
+  },
+  "player": {
+    "startingEnergy": 180,
+    "startingCoreHp": 20,
+    "maxCoreHp": 20,
+    "waveClearBaseBonus": 45,
+    "waveClearBonusPerWave": 10,
+    "sellRefundRatio": 0.75,
+    "upgradeCostMultiplier": 1.35,
+    "upgradeDamageMultiplier": 1.48,
+    "upgradeRangeMultiplier": 1.1,
+    "maxTowerLevel": 3
+  },
+  "towers": {
+    "pulse": {
+      "id": "pulse",
+      "name": "脈衝三角塔",
+      "shape": "triangle",
+      "color": "#38bdf8",
+      "cost": 50,
+      "damage": 22,
+      "range": 165,
+      "cooldown": 520,
+      "projectileSpeed": 560,
+      "description": "高速單體動能射擊，穩定輸出"
+    },
+    "frost": {
+      "id": "frost",
+      "name": "冰霜六邊塔",
+      "shape": "hexagon",
+      "color": "#2dd4bf",
+      "cost": 75,
+      "damage": 14,
+      "range": 145,
+      "cooldown": 1150,
+      "slowRatio": 0.42,
+      "slowDuration": 2200,
+      "description": "寒霜脈衝環，範圍減速與低溫傷害"
+    },
+    "rail": {
+      "id": "rail",
+      "name": "軌道菱形塔",
+      "shape": "diamond",
+      "color": "#f472b6",
+      "cost": 110,
+      "damage": 68,
+      "range": 250,
+      "cooldown": 1650,
+      "beamWidth": 14,
+      "description": "超遠程直線貫穿高能光束"
+    },
+    "arc": {
+      "id": "arc",
+      "name": "磁暴星形塔",
+      "shape": "star",
+      "color": "#fbbf24",
+      "cost": 125,
+      "damage": 30,
+      "range": 175,
+      "cooldown": 1050,
+      "chainCount": 3,
+      "chainRange": 125,
+      "description": "連鎖高壓電弧，於多目標間跳躍"
+    }
+  },
+  "enemies": {
+    "swift": {
+      "id": "swift",
+      "name": "迅捷三角體",
+      "shape": "triangle",
+      "color": "#fb7185",
+      "baseHp": 55,
+      "speed": 118,
+      "reward": 12,
+      "coreDamage": 1,
+      "radius": 13
+    },
+    "heavy": {
+      "id": "heavy",
+      "name": "重裝方塊體",
+      "shape": "square",
+      "color": "#a78bfa",
+      "baseHp": 195,
+      "speed": 56,
+      "reward": 24,
+      "coreDamage": 2,
+      "radius": 17
+    },
+    "splitter": {
+      "id": "splitter",
+      "name": "分裂多邊體",
+      "shape": "pentagon",
+      "color": "#34d399",
+      "baseHp": 110,
+      "speed": 78,
+      "reward": 18,
+      "coreDamage": 1,
+      "radius": 15,
+      "splitCount": 2
+    },
+    "shielded": {
+      "id": "shielded",
+      "name": "護盾八面體",
+      "shape": "octagon",
+      "color": "#60a5fa",
+      "baseHp": 145,
+      "baseShield": 90,
+      "speed": 70,
+      "reward": 26,
+      "coreDamage": 2,
+      "radius": 16
+    },
+    "boss": {
+      "id": "boss",
+      "name": "幾何母體核心",
+      "shape": "boss",
+      "color": "#f43f5e",
+      "baseHp": 1850,
+      "baseShield": 650,
+      "speed": 40,
+      "reward": 180,
+      "coreDamage": 10,
+      "radius": 28
+    }
+  },
+  "waves": [
+    {
+      "wave": 1,
+      "spawnInterval": 1050,
+      "hpScale": 1.0,
+      "groups": [
+        {
+          "type": "swift",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "spawnInterval": 950,
+      "hpScale": 1.15,
+      "groups": [
+        {
+          "type": "swift",
+          "count": 7
+        },
+        {
+          "type": "heavy",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "spawnInterval": 900,
+      "hpScale": 1.3,
+      "groups": [
+        {
+          "type": "splitter",
+          "count": 6
+        },
+        {
+          "type": "swift",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "wave": 4,
+      "spawnInterval": 850,
+      "hpScale": 1.5,
+      "groups": [
+        {
+          "type": "heavy",
+          "count": 5
+        },
+        {
+          "type": "shielded",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "wave": 5,
+      "spawnInterval": 820,
+      "hpScale": 1.75,
+      "groups": [
+        {
+          "type": "swift",
+          "count": 8
+        },
+        {
+          "type": "splitter",
+          "count": 5
+        },
+        {
+          "type": "boss",
+          "count": 1,
+          "hpOverride": 950
+        }
+      ]
+    },
+    {
+      "wave": 6,
+      "spawnInterval": 760,
+      "hpScale": 2.05,
+      "groups": [
+        {
+          "type": "shielded",
+          "count": 7
+        },
+        {
+          "type": "swift",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "wave": 7,
+      "spawnInterval": 720,
+      "hpScale": 2.35,
+      "groups": [
+        {
+          "type": "splitter",
+          "count": 9
+        },
+        {
+          "type": "heavy",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "wave": 8,
+      "spawnInterval": 680,
+      "hpScale": 2.7,
+      "groups": [
+        {
+          "type": "shielded",
+          "count": 8
+        },
+        {
+          "type": "heavy",
+          "count": 7
+        },
+        {
+          "type": "swift",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "wave": 9,
+      "spawnInterval": 620,
+      "hpScale": 3.1,
+      "groups": [
+        {
+          "type": "splitter",
+          "count": 10
+        },
+        {
+          "type": "shielded",
+          "count": 8
+        },
+        {
+          "type": "swift",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "wave": 10,
+      "spawnInterval": 650,
+      "hpScale": 3.5,
+      "groups": [
+        {
+          "type": "heavy",
+          "count": 6
+        },
+        {
+          "type": "shielded",
+          "count": 6
+        },
+        {
+          "type": "boss",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "all_dmg_1",
+      "rarity": "common",
+      "title": "高能聚焦透鏡",
+      "desc": "全體砲塔傷害 +18%",
+      "stat": "globalDamageMult",
+      "value": 0.18
+    },
+    {
+      "id": "all_spd_1",
+      "rarity": "common",
+      "title": "超頻時脈振盪器",
+      "desc": "全體砲塔攻擊速度 +16%",
+      "stat": "globalFireRateMult",
+      "value": 0.16
+    },
+    {
+      "id": "all_rng_1",
+      "rarity": "common",
+      "title": "廣域雷達陣列",
+      "desc": "全體砲塔射程 +15%",
+      "stat": "globalRangeMult",
+      "value": 0.15
+    },
+    {
+      "id": "econ_kill",
+      "rarity": "common",
+      "title": "殘骸能量回收",
+      "desc": "擊殺敵人獲得能量 +25%",
+      "stat": "energyGainMult",
+      "value": 0.25
+    },
+    {
+      "id": "core_repair",
+      "rarity": "common",
+      "title": "棱鏡結構修復",
+      "desc": "立即回復 4 點核心生命並獲得 +50 能量",
+      "stat": "instantRepair",
+      "value": 4
+    },
+    {
+      "id": "pulse_double",
+      "rarity": "rare",
+      "title": "雙聯脈衝槍管",
+      "desc": "脈衝三角塔額外發射 1 枚折射副彈（60% 傷害）",
+      "stat": "pulseSplit",
+      "value": 1
+    },
+    {
+      "id": "frost_shatter",
+      "rarity": "rare",
+      "title": "絕對零度碎裂",
+      "desc": "冰霜六邊塔減速幅度 +15%，且受減速敵人承受 +25% 傷害",
+      "stat": "frostVulnerability",
+      "value": 0.25
+    },
+    {
+      "id": "rail_overcharge",
+      "rarity": "rare",
+      "title": "軌道理論超載",
+      "desc": "軌道菱形塔光束寬度加倍且傷害 +35%",
+      "stat": "railOvercharge",
+      "value": 0.35
+    },
+    {
+      "id": "arc_chain",
+      "rarity": "rare",
+      "title": "超導高壓線圈",
+      "desc": "磁暴星形塔電弧連鎖目標 +2 且連鎖傷害不再衰減",
+      "stat": "arcBonusChains",
+      "value": 2
+    },
+    {
+      "id": "crit_prism",
+      "rarity": "epic",
+      "title": "棱鏡暴擊折射",
+      "desc": "全體攻擊獲得 25% 機率觸發 2.2 倍暴擊傷害",
+      "stat": "critChance",
+      "value": 0.25
+    },
+    {
+      "id": "execute_protocol",
+      "rarity": "epic",
+      "title": "終結抹除協議",
+      "desc": "對生命值低於 30% 的敵人造成 +50% 處決傷害",
+      "stat": "executeBonus",
+      "value": 0.5
+    }
+  ]
+}
